@@ -1,4 +1,3 @@
-import math
 import pickle
 
 
@@ -34,5 +33,5 @@ def list_sort(path1, path2):  # сортування техніки за гар�
             expired_list.append(list[i])
         else:
             valid_list.append(list[i])
-            file_write(expired_list, path2, "wb")
+        file_write(expired_list, path2, "wb")
     return valid_list
