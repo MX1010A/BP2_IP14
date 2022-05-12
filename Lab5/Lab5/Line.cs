@@ -13,11 +13,11 @@ namespace Lab5
             this.coordinatesB = coordinatesB;
         }
         
-        public List<int> VectorCoordinates()
+        public int[] VectorCoordinates()
         {
-            List<int> vectorCoordinates = new List<int>();
+            int[] vectorCoordinates = new int[coordinatesA.Length];
             for (int i = 0; i < coordinatesA.Length; i++)
-                vectorCoordinates.Add(coordinatesB[i] - coordinatesA[i]);
+                vectorCoordinates[i] = coordinatesB[i] - coordinatesA[i];
             return vectorCoordinates;
         }
         
