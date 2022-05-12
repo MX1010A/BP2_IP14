@@ -1,0 +1,7 @@
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\bin\Debug\Lab5.exe
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\bin\Debug\Lab5.pdb
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\obj\Debug\Lab5.csproj.AssemblyReference.cache
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\obj\Debug\Lab5.csproj.SuggestedBindingRedirects.cache
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\obj\Debug\Lab5.exe
+C:\Users\MX1010A\RiderProjects\Lab5\Lab5\obj\Debug\Lab5.pdb
