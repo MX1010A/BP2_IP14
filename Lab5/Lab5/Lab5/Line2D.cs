@@ -17,7 +17,7 @@
                    VectorCoordinates()[1] * line.VectorCoordinates()[1] == 0;
         }
  
-        public override bool BelongsToLine(int[] coordinatesP)
+        public override bool PointBelongs(int[] coordinatesP)
         {
             return IsParallel(new Line2D(coordinatesA, coordinatesP));
         }

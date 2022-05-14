@@ -1,30 +1,33 @@
 ﻿using System;
+using System.Linq;
 
 namespace Lab5
 {
     public class Func
     {
+        //перевірка прямих масиву на першу вказану властивість 
         public static bool PointCheck(Line[] lines, int[] point, ref int index)
         {
             for (int i = 1; i < lines.Length; i++)
                 if (lines[i].IsPerpendicular(lines[0]))
-                    if (lines[i].BelongsToLine(point))
+                    if (lines[i].PointBelongs(point))
                     {
                         index = i;
                         return true;
                     }
             return false;
         }
-
+        
+        //перевірка прямих масиву на другу вказану властивість 
         public static bool LineCheck(Line[] lines, ref int index)
         {
             for (int i = 0; i < lines.Length; i++)
             {
                 bool exists = false;
-                foreach (var t in lines)
+                foreach (var line in lines)
                 {
-                    if (lines[i] == t) continue;
-                    exists = lines[i].IsPerpendicular(t);
+                    if (lines[i] == line) continue;
+                    exists = lines[i].IsPerpendicular(line);
                 }
                 if (exists)
                 {
@@ -34,20 +37,20 @@ namespace Lab5
             }
             return false;
         }
+        
+        //виведення масиву прямих
         public static void LinesOut(Line[] lines, string comment)
         {
             Console.WriteLine(comment);
             for (int i = 0; i < lines.Length; i++)
-                Console.WriteLine($"Line #{i + 1}:\t{lines[i].String()}");
+                Console.WriteLine($"Line #{i + 1}:\t{lines[i]}");
             Console.WriteLine();
         }
         
+        //перетворення координат точки у рядок
         public static string PointString(int[] point)
         {
-            string pointStr = $"({point[0]}";
-            for (int i = 1; i < point.Length; i++)
-                pointStr += $"; {point[i]}";
-            return pointStr + ")";
+            return $"({string.Join("; ", point.Select(x => x.ToString()).ToArray())})";
         }
     }
 }

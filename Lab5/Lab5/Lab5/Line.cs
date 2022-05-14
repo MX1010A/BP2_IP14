@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 namespace Lab5
 {
@@ -7,12 +7,14 @@ namespace Lab5
         protected readonly int[] coordinatesA;
         protected readonly int[] coordinatesB;
 
+        //конструктор з параметрами
         protected Line(int[] coordinatesA, int[] coordinatesB)
         {
             this.coordinatesA = coordinatesA;
             this.coordinatesB = coordinatesB;
         }
         
+        //зведення прямої до вектора
         public int[] VectorCoordinates()
         {
             int[] vectorCoordinates = new int[coordinatesA.Length];
@@ -21,23 +23,20 @@ namespace Lab5
             return vectorCoordinates;
         }
         
-        public string String()
+        //представлення атрибутів об'єкта у вигляді рядка
+        public override string ToString()
         {
-            string line = $"A({coordinatesA[0]}";
-            for (int i = 1; i < coordinatesA.Length; i++)
-                line += $"; {coordinatesA[i]}";
-            
-            line += $"), B({coordinatesB[0]}";
-            for (int i = 1; i < coordinatesB.Length; i++)
-                line += $"; {coordinatesB[i]}";
-            
-            return line + ")";
+            return $"A ({string.Join( "; ", coordinatesA.Select(x => x.ToString()).ToArray())}), " +
+                   $"B ({string.Join( "; ", coordinatesB.Select(x => x.ToString()).ToArray())})";
         }
         
+        //перевірка паралельності двох ліній
         public abstract bool IsParallel(Line line);
         
+        //перевірка перпендикулярності двох ліній
         public abstract bool IsPerpendicular(Line line);
         
-        public abstract bool BelongsToLine(int[] coordinatesP);
+        //перевірка належності точки до прямої
+        public abstract bool PointBelongs(int[] coordinatesP);
     }
 }
